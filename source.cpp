@@ -2,24 +2,29 @@
 #include <iostream>
 #include <string>
 
-const std::string ENG =
-    R"(QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>qwertyuiop[]asdfghjkl;'zxcvbnm,.)";
-const std::string RUS =
-    R"(ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮйцукенгшщзхъфывапролджэячсмитьбю)";
-std::string transliterator(std::string &text) {
+const std::string ENG = R"(QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>qwertyuiop[]asdfghjkl;'zxcvbnm,.)";
+const std::string RUS = R"(ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮйцукенгшщзхъфывапролджэячсмитьбю)";
+
+std::string transliterator(const std::string &text) 
+{
   size_t pos = 0;
-  for (size_t i = 0; i < text.length(); ++i) {
+  std::string newtext = text;
+
+  for (size_t i = 0; i < text.length(); ++i) 
+  {
     pos = ENG.find(text[i]);
-    if (pos != ENG.npos)
-      text[i] = RUS[pos];
+    if (pos != std::string::npos)
+      newtext[i] = RUS[pos];
   }
-  return text;
+  std::cout << newtext << " ";
+  return newtext;
 }
-int main() {
+int main(int argc, char *argv[]) 
+{
   SetConsoleOutputCP(1251);
-  std::string string;
-  std::cout << "\nEnter any transliterated text: ";
-  std::getline(std::cin, string);
-  std::cout << "Back to russian: " << transliterator(string);
+
+  for (unsigned int i = 1; i < argc; ++i) 
+    transliterator(static_cast<std::string>(argv[i]));
+
   return 0;
 }
