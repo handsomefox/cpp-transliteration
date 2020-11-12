@@ -2,16 +2,16 @@
 
 ## Requirements
 
-1. Windows
-2. Anything that can compile it
+1. Windows.
+2. Anything that can compile it.
 
-It only support QWERTY layout
+ Only QWERTY is supported.
 
 ## How to use
 
 ### Compilation example
 
-I recommend using MSVC as i used it to test the program
+I recommend using MSVC as i used it to test the program.
 
 clang++ source.cpp -o source.exe
 
