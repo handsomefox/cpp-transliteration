@@ -1,19 +1,11 @@
-# Text transliteration fixer
+# cpp_transliteration
 
-## Requirements
+## Generating project files
 
-1. Windows.
-2. Anything that can compile it.
-
- Only QWERTY is supported.
+To generate a project file, run GenerateProject.bat inside scripts folder.
+This will create a vs2019 project file.
 
 ## How to use
-
-### Compilation example
-
-I recommend using MSVC as i used it to test the program.
-
-clang++ source.cpp -o source.exe
 
 ### Sample input
 
